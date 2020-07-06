@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- 常见的数据库操作，更多信息到官网查看 https://docs.liquibase.com/change-types -->
+    <!-- changeset是顺序执行的，执行的时候会检查DATABASECHANGELOG表，看changeset是否已经执行，
+         如果已经执行就跳过（除非runAlways=true），等所有changeset都执行完后，DATABASECHANGELOG表会更新MD5Sum值 -->
+    <!-- changeSet中属性runAlways表示总是会执行，runOnChange表示如果变化了才会执行 -->
+    <!-- 注意id尽量不要重复，id+author保证唯一 -->
+    <!-- 已经执行过的changset不要再改动，不然启动会报错，就算是跟以前一样相同的修改表结构操作，也要在后面追加新的changeset块-->
+    <!-- id使用任务-日期-序号 -->
+    <!-- 表、列都要添加remarks注释 -->
+    <changeSet id="addColunmDec-20200630-001" author="wz" >
+        <addColumn tableName="sys_info" >
+            <column name="dec" type="varchar(250)" remarks="系统字段值描述"></column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

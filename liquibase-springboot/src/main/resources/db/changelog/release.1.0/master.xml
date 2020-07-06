@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- 注意这里是顺序执行的-->
+    <!-- 这里建议根据功能独立changeset文件，方便管理 -->
+    <include file="classpath:db/changelog/release.1.0/init-table.xml" />
+    <include file="classpath:db/changelog/release.1.0/init-data.xml" />
+
+</databaseChangeLog>

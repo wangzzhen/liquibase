@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <!-- 注意这里是顺序执行的-->
+    <!-- 这里建议根据功能独立changeset文件，方便管理 -->
+    <!-- 可以根据发布进行管理，每个发布版本新建一个文件夹，里面新建一个master，include这次发布所需要的所有changeset文件
+         参考changelog路径下的release.1.0/release.1.1文件夹
+    -->
+    <include file="classpath:db/changelog/init/init-table.xml" />
+    <include file="classpath:db/changelog/init/init-data.xml" />
+    <include file="classpath:db/changelog/system.xml" />
+    <include file="classpath:db/changelog/user.xml" />
+
+</databaseChangeLog>
